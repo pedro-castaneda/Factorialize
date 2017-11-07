@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Factorial Calc</title>
+	<link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="css/prism.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+<div class="container">
+	<h1>Get Factorial Of (n!):</h1>
+	<input id="input">
+	<button id="btn">Generate</button>
+</div>
+<div class="container2">
+	<p id="result"></p>
+</div>
+
+<div class="container3">
+	<pre>
+		<code class="language-javascript">
+		//Select DOM elements into new variables
+		let input = $("#input");
+		let btn = $("#btn");
+		let result= $("#result");
+
+
+		//Calls Factorial() and passes parsed input value to new variable to be displayed
+		btn.on('click',function(){
+		let newValue = parseInt(input.val());
+		result.text("The Factorial of " + input.val() + " is " + factorial(newValue));
+		});
+
+
+		//This Function takes in a parameter and generates its factorial value.
+		function factorial(num){
+			let number = num;
+			let i = 0;
+			let result = 0;
+
+			for (i = num - 1; i >= 1; i--){
+		    	num = num * i;
+			}
+		result = num;
+		return result;
+		}
+		</code>
+	</pre>
+
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script src="js/prism.js" type="text/javascript"></script>
+<script src="js/factorial.js" type="text/javascript"></script>
+</body>
+</html>
